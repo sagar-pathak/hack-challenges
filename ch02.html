@@ -42,7 +42,7 @@
         const decryptionKey = "secret"; // Change this to set the correct decryption key
 
         function decryptMessage() {
-            const userInput = document.getElementById("decryption").value.toUpperCase();
+            const userInput = document.getElementById("decryption").value.toLowerCase();
             const messageElement = document.querySelector(".message");
 
             if (userInput === decryptionKey) {
