@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .message {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Hacking Challenge!</h1>
+        <p>You've stumbled upon a secure system that requires a password to access. Your mission is to hack into the system by guessing the correct password.</p>
+
+        <div class="message"></div>
+
+        <form>
+            <label for="password">Enter the password:</label>
+            <input type="password" id="password" name="password">
+            <br><br>
+            <button type="button" onclick="checkPassword()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const correctPassword = "hacked123"; // Change this to set the correct password
+
+        function checkPassword() {
+            const userInput = document.getElementById("password").value;
+            const messageElement = document.querySelector(".message");
+
+            if (userInput === correctPassword) {
+                messageElement.textContent = "Access granted. You've successfully hacked into the system!";
+                messageElement.style.color = "green";
+            } else {
+                messageElement.textContent = "Access denied. Incorrect password. Keep trying!";
+                messageElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
