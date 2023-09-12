@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Challenge 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .message {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Hacking Challenge 3!</h1>
+        <p>You've found an encrypted message that you need to decrypt to proceed:</p>
+        
+        <blockquote>
+            <p>EJGKPV EQPPC UWRRQ DGCWU CVQEM UCUWE CIGQO CMEJC UJQEM</p>
+        </blockquote>
+
+        <div class="message"></div>
+
+        <form>
+            <label for="decryption">Decryption Key:</label>
+            <input type="text" id="decryption" name="decryption">
+            <br><br>
+            <button type="button" onclick="decryptMessage()">Decrypt</button>
+        </form>
+    </div>
+
+    <script>
+        const encryptedMessage = "EJGKPV EQPPC UWRRQ DGCWU CVQEM UCUWE CIGQO CMEJC UJQEM";
+        const decryptionKey = "SECRET"; // Change this to set the correct decryption key
+
+        function decryptMessage() {
+            const userInput = document.getElementById("decryption").value.toUpperCase();
+            const messageElement = document.querySelector(".message");
+
+            if (userInput === decryptionKey) {
+                messageElement.textContent = "Congratulations! You've successfully decrypted the message.";
+                messageElement.style.color = "green";
+            } else {
+                messageElement.textContent = "Access denied. Incorrect decryption key. Try again!";
+                messageElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
