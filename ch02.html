@@ -24,7 +24,7 @@
         <p>You've found an encrypted message that you need to decrypt to proceed:</p>
         
         <blockquote>
-            <p>EJGKPV EQPPC UWRRQ DGCWU CVQEM UCUWE CIGQO CMEJC UJQEM</p>
+            <p>MYsmil/Azta8I8Fb1Phkj61zh4c3MHfwpg7eXopRlsT6QJAT1H0QOB0A9SXbhpKH</p>
         </blockquote>
 
         <div class="message"></div>
@@ -38,18 +38,18 @@
     </div>
 
     <script>
-        const encryptedMessage = "EJGKPV EQPPC UWRRQ DGCWU CVQEM UCUWE CIGQO CMEJC UJQEM";
-        const decryptionKey = "SECRET"; // Change this to set the correct decryption key
+        const encryptedMessage = "MYsmil/Azta8I8Fb1Phkj61zh4c3MHfwpg7eXopRlsT6QJAT1H0QOB0A9SXbhpKH";
+        const decryptionKey = "secret"; // Change this to set the correct decryption key
 
         function decryptMessage() {
             const userInput = document.getElementById("decryption").value.toUpperCase();
             const messageElement = document.querySelector(".message");
 
             if (userInput === decryptionKey) {
-                messageElement.textContent = "Congratulations! You've successfully decrypted the message.";
+                messageElement.textContent = "Message decrypted: \"Welcome to Computer Security lab [UofM]\"";
                 messageElement.style.color = "green";
             } else {
-                messageElement.textContent = "Access denied. Incorrect decryption key. Try again!";
+                messageElement.textContent = "Incorrect key. Try again!";
                 messageElement.style.color = "red";
             }
         }
