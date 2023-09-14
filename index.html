@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .message {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Hacking Challenge!</h1>
+        <p> This assignment is centered on introducing the basic concept of vulnerability
+            identification on websites using browser tools, such as Developer Tools.
+            Browser Developer Tools, commonly referred to as 'DevTools,' encompass a collection of built-in utilities
+            and features provided by web browsers.
+            They serve the purpose of aiding developers in inspecting, debugging, and troubleshooting web pages and web
+            applications.
+        </p>
+        <p>
+            In this assignment, students will be presented with one example along with its solution, followed by a
+            similar activity that students should complete.
+            Student should take the screenshot of each solution they have found and submit them in a single doc or pdf
+            file in the Canvas.
+        </p>
+
+        <div class="message"></div>
+
+        <form>
+            <label for="email">Enter your UofM email:</label>
+            <input type="text" id="email" name="Enter UofM email">
+            <br><br>
+            <button type="button" onclick="saveEmail()">Submit</button>
+        </form>
+    </div>
+    <script>
+        function saveEmail() {
+            var email = document.getElementById('email').value;
+            localStorage.setItem('email', email);
+            var domain = window.location.origin;
+            setTimeout(()=>{
+                window.location.href = domain + "/ex01.html"
+            }, 100)
+        }
+    </script>
+</body>
+
+</html>

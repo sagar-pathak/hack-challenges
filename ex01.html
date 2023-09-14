@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://bootswatch.com/5/zephyr/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <title>Hacking Challenge</title>
+    <style>
+        .gap {
+            margin-top: 20px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin-top: 20px !important;">
+            <h1>Welcome to the Hacking Challenge!</h1>
+            <h2>Example 1</h2>
+            <p>Crack the authentication system</p>
+            <div class="message"></div>
+
+            <form>
+                <table>
+                    <tr>
+                        <td colspan="2">Admin Login</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="username">Username:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="username" name="username">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">Password:</label>
+                        </td>
+                        <td>
+                            <input type="password" id="password" name="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" onclick="checkPassword()">Login</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="container gap">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Solution!</div>
+            <div class="card-body">
+                <h4 class="card-title">Hardcoded Password</h4>
+                <p class="card-text">The hardcoded passwords are the plain text developers usually embedded in the
+                    source code.
+                    Read more about hardcoded password
+                    <a href="https://offensive360.com/how-to-prevent-hardcoded-passwords/" target="_blank"> here. </a>
+                    <br>
+                    You want to check the sourcecode to find any hardcoded password. Please check the HTML source code using browser dev tools.
+                    <br>
+                    On Google Chrome:
+                <ul>
+                    <li>
+                        Right-click anywhere on the webpage (or press Ctrl + U on your keyboard) to open the context
+                        menu.
+                    </li>
+                    <li>
+                        In the context menu, select "View Page Source." This will open a new tab or window displaying
+                        the
+                        HTML source code of the webpage.
+                    </li>
+                </ul>
+
+                On Mozilla Firefox:
+                <li>
+                    Right-click on the page (or press Ctrl + U) to open the context menu.
+                </li>
+                <li>
+                    In the context menu, choose "View Page Source." This will open a new tab displaying the HTML source
+                    code of the webpage.
+                </li>
+
+                On Microsoft Edge:
+
+                <ul>
+                    <li>
+                        Right-click on the page (or press Ctrl + U) to open the context menu.
+                    </li>
+                    <li>
+                        Select "View Page Source." This will open a new tab displaying the HTML source code of the
+                        webpage.
+                    </li>
+                </ul>
+
+
+                On Safari (Mac):
+                <ul>
+                    <li>
+                        In the menu bar, click on "Develop."
+                    </li>
+                    <li>
+                        In the "Develop" menu, select "Show Page Source." This will open a new tab displaying the HTML
+                        source code of the webpage.
+                    </li>
+                </ul>
+
+                On Internet Explorer (Note: Internet Explorer is an outdated browser and not recommended for modern web
+                development or browsing):
+                <ul>
+                    <li>
+                        Click on the "View" menu in the menu bar (or press Alt + V on your keyboard).
+
+                    </li>
+                    <li>
+                        In the "View" menu, select "Source." This will open a new window displaying the HTML source code
+                        of
+                        the webpage.
+                    </li>
+                </ul>
+                </p>
+                <p>
+                    In the source code page, you need to find for any hardcoded username or password. For the example, if you scroll all the way down to the script section, 
+                    you'll see the hardcoded username and password (admin/hacked123) as shown in the image below. 
+                </p>
+                <img src="images/ex011.png" />
+                <p>
+                    Voilaa!!! use these credentials to get into the system now. 
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const username = "admin";
+        const correctPassword = "hacked123"; 
+
+        function checkPassword() {
+            const usernameInput = document.getElementById("username").value;
+            const userInput = document.getElementById("password").value;
+            const messageElement = document.querySelector(".message");
+
+            if (userInput === correctPassword && usernameInput == username) {
+                messageElement.textContent = "Access granted. You've successfully hacked into the system!";
+                messageElement.style.color = "green";
+            } else {
+                messageElement.textContent = "Access denied. Incorrect password. Keep trying!";
+                messageElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>
